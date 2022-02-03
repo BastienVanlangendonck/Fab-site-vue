@@ -49,11 +49,15 @@ export default {
   text-decoration: none;
 }
 .header-img {
-  width: 7rem;
-  height: 7rem;
+  width: 6rem;
+  height: 6rem;
   margin: 1.5rem;
 }
 .header-title {
+  display: flex;
+  align-self: center;
+  font-size: 2rem;
+  font-style: italic;
   margin: 1.5rem;
   color: white;
 }
@@ -61,9 +65,11 @@ export default {
   display: flex;
   list-style-type: none;
   justify-content: end;
+  margin-bottom: auto;
 }
 
 .nav-items {
+  font-weight: bold;
   margin: 0rem 1rem 1rem 1rem;
 }
 </style>
