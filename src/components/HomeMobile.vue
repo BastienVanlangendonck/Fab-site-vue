@@ -1,10 +1,98 @@
 <template>
   <div class="container">
+    <div class="title-container">
+      <h1 class="site-name">L'âme-agit en soi</h1>
+      <h2 class="site-description">Le Site de Massages et bien être</h2>
+    </div>
     <img class="banner" src="../assets/fakebanner.png" />
     <div class="card">
       <div class="content-cotainer">
         <h1 class="card-title">Ma présentation</h1>
-        <div class="card-content"></div>
+        <div class="card-content">
+          Bonjour,<br />
+          Je m'appelle Fabienne et je suis heureuse que vous ayez été guidé
+          jusqu'à moi, car oui le hasard n'existe pas, tout est synchronicité,
+          tout à sa raison d'être.<br />
+          Je vais maintenant vous parler un peu de moi.<br />
+          Je me suis toujours senti 'différente' vivant sur cette planète mais
+          n'étant pas de cette planète. Toujours la tête dans les étoiles à
+          regarder le ciel, les nuages, et en y voyant des choses que d'autres
+          ne perçoivent pas.<br />
+          Quelque peu rebelle, allant toujours à contre courant, et ne pouvant
+          rentrer dans aucun des moules que l'on me proposait, j'ai passé une
+          grande partie de ma vie à chercher ce que j'étais et qui j'étais.<br />
+          <br />J'ai toujours posé les mains sur les parties douloureuses de
+          façon inné, je sais quoi faire, j'ai ce savoir au fond de moi, je ne
+          sais pas d'où il vient mais il est là, il est dans mon essence. Il y a
+          des situations dans la vie qui transforment profondément qui tu es, et
+          il aura fallu que je passe par l'expérience la plus difficile et la
+          plus douloureuse de ma vie, l'accompagnement en fin de vie et la perte
+          de ma mère, pour arriver enfin à comprendre et à être. Je suis
+          descendue au plus bas et j'ai fait l'expérience de la nuit noire de
+          l'âme mais tout cela m'a permis de me réveiller d'un long sommeil.
+          C'est lorsque l'on est au plus bas que l'on peut se diriger vers la
+          lumière... <br />
+          <div v-show="seeMore" class="card-content-added">
+            Il y a maintenant 2 ans, j'ai eu un profond appel de mon âme à
+            partir en Asie, au Vietnam plus précisement, pays où mon fils est
+            allé quelque temps, et je peux dire que c'est grâce à lui que j'ai
+            vécu le plus beau des voyages intérieurs. Je suis partie toute
+            seule, sans parler la langue ni même l'anglais et de plus pendant
+            une période plus que trouble. Mais je savais une chose, c'est que
+            j'avais quelque chose à y trouver, je ne savais pas quoi mais
+            c'était viscéral. J'ai donc décidé d'aller dans une direction
+            inconnue, à des milliers de kilomètres, sans écouter ce qu'on me
+            disait à droite ou à gauche, mais seulement en écoutant mon coeur.
+            Mon moi supérieur est passé aux commandes, je ne savais où j'allais
+            et cela m'a demandé de lacher prise et de me laisser guider par
+            cette force lumineuse en moi, avoir confiance en sa guidance et une
+            foi inébranlable en ce que je ressentais, en ce ce que mon coeur me
+            disait. J'ai eu cette impression de rentrer chez moi en arrivant au
+            Vietnam, tout me ramené à ce que j'étais intérieurement.<br /><br />
+            Mes ressentis et perceptions étaient démultipliés. Je ne savais plus
+            qui j'étais, je me reconnectais à toutes sortes de choses... mais
+            c'était merveilleux, destabilisant mais tellement merveilleux.<br />
+            J'ai découvert ce que je suis allée chercher au Vietnam, c'était
+            moi, je me suis rencontée là-bas, j'ai fait des choses que je me
+            pensais incapable de faire, et j'ai compris qu'il faut voyager loin
+            de chez soi, le plus loin possible, car il n'y a que face à
+            soi-même, éloigné de sa zone de confort, que l'on peut faire la
+            connaissance de celle que l'on est réellement. J'y ai fait de
+            magnifiques rencontres mais la plus belle des rencontres et celle
+            que j'ai faite avec moi-même !<br />
+            "A mon retour de ce voyage tout à changé, tout ce qui n'était pas
+            aligné à mes nouvelles énergies, à la nouvelle version de moi-même
+            qui était en train d'émerger, a été pulvérisé... car si ce n'est pas
+            votre chemin, votre place, alors l'Unvers débarasse ce qui vous
+            entoure qu'on le veuille ou non, et ce jusqu'à ce que l'on comprenne
+            le message. Le message que j'avais à comprendre était que j'étais
+            prête, que j' n'avais pas à avoir peur et que c'était le moment.<br /><br />
+            Je pense que nous naissons tous avec une mission. La mienne est
+            d'aider par les soins énergétiques, le magnétisme, de part ce
+            magnétisme trés développé en moi, la clairsentience et la
+            clairvoyance. Si tout cela résonne en vous je suis convaincue que je
+            peux vous aider à retrouver votre force vitale et votre pouvoir de
+            guérison. Je vous partagerai également ce que j'ai appris et compris
+            durant toutes ces années.<br />
+            Au plaisir de vous rencontrer. <br /><br />
+            Fabienne"
+          </div>
+        </div>
+        <a class="expand-link" @click="handleClick">Lire plus</a>
+      </div>
+    </div>
+    <div class="items-container">
+      <div class="items">
+        <img class="item-img" src="../assets/Soins.png" />
+        <h2 class="item-title">Soins energetiques</h2>
+      </div>
+      <div class="items">
+        <img class="item-img" src="../assets/magnetisme.png" />
+        <h2 class="item-title">Magnetisme</h2>
+      </div>
+      <div class="items">
+        <img class="item-img" src="../assets/massages.png" />
+        <h2 class="item-title">Massages</h2>
       </div>
     </div>
   </div>
@@ -17,6 +105,7 @@ export default {
 
   data() {
     return {
+      seeMore: null,
       homeText: [
         {
           id: 1,
@@ -36,12 +125,27 @@ export default {
       ],
     };
   },
+  methods: {
+    handleClick(event) {
+      if (event.target.textContent === "Lire plus") {
+        this.seeMore = true;
+        event.target.textContent = "Réduire";
+      } else {
+        this.seeMore = !true;
+        event.target.textContent = "Lire plus";
+      }
+      return;
+    },
+  },
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+
 .banner {
   max-width: 100%;
+  height: 150px;
 }
 .card {
   background-color: rgba(100, 62, 139, 0.7);
@@ -52,15 +156,79 @@ export default {
   max-height: 10%;
 }
 
+.card-img-desc {
+  width: 150px;
+  height: 150px;
+}
+
+.items-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-img {
+  height: 100px;
+  width: 100px;
+}
+
 .card-title {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-style: italic;
+  text-align: center;
+}
+
+.card-content-added {
+  margin-top: 1rem;
 }
 
 .card-content {
-  margin: 4rem;
+  margin: 1rem 4rem 1rem 4rem;
   line-height: 1.3rem;
   font-size: 1.2rem;
   text-align: left;
+}
+
+.title-container {
+  text-align: center;
+  font-family: "Tangerine";
+  margin-top: 6rem;
+}
+
+.site-name {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.site-description {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.expand-link {
+  margin-left: 80%;
+  margin-bottom: 2rem;
+}
+
+.expand-link:hover {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: rgb(61, 18, 58);
+  transition: 0.5s ease all;
+}
+
+@media (max-width: 520px) {
+  .items-container {
+    display: block;
+  }
+
+  .items {
+    margin-bottom: 2rem;
+  }
 }
 </style>

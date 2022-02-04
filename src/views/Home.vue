@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <HomeMobile v-if="mobileView" />
-    <HomeDesktop v-if="!mobileView" />
+    <HomeMobile v-if="mobile" />
+    <HomeDesktop v-if="!mobile" />
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 
   data() {
     return {
-      mobileView: true,
+      mobile: null,
       homeText: [
         {
           id: 1,
@@ -38,13 +38,19 @@ export default {
     };
   },
   methods: {
-    handleView() {
-      this.mobileView = window.innerWidth <= 990;
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      return;
     },
   },
   created() {
-    this.handleView();
-    window.addEventListener("resize", this.handleView);
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen();
   },
 };
 </script>
