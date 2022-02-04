@@ -2,9 +2,9 @@
   <header class="header">
     <div class="logo">
       <a class="home-link" href="/">
-        <img class="header-img" src="../assets/logo-250.png" alt="Logo" />
         <h1 class="header-title">L'âme-agit en soi</h1>
       </a>
+      <img class="burger-img" src="../assets/bars-solid.svg" />
     </div>
     <ul class="nav">
       <li class="nav-items">
@@ -35,6 +35,11 @@ export default {
 </script>
 
 <style scoped>
+.burger-img {
+  height: 35px;
+  width: 35px;
+  margin: 1.5rem;
+}
 .header {
   background: rgb(44, 21, 76);
   background: linear-gradient(
@@ -44,7 +49,8 @@ export default {
   );
 }
 .logo {
-  max-height: 6rem;
+  display: flex;
+  justify-content: space-between;
 }
 .home-link {
   display: flex;

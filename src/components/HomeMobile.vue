@@ -1,23 +1,22 @@
 <template>
   <div class="container">
-    <HomeMobile v-if="mobileView" />
-    <HomeDesktop v-if="!mobileView" />
+    <img class="banner" src="../assets/fakebanner.png" />
+    <div class="card">
+      <div class="content-cotainer">
+        <h1 class="card-title">Ma présentation</h1>
+        <div class="card-content"></div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HomeMobile from "@/components/HomeMobile.vue";
-import HomeDesktop from "@/components/HomeDesktop.vue";
 export default {
-  name: "Home",
-  components: {
-    HomeDesktop,
-    HomeMobile,
-  },
+  name: "HomeMobile",
+  components: {},
 
   data() {
     return {
-      mobileView: true,
       homeText: [
         {
           id: 1,
@@ -37,22 +36,12 @@ export default {
       ],
     };
   },
-  methods: {
-    handleView() {
-      this.mobileView = window.innerWidth <= 990;
-    },
-  },
-  created() {
-    this.handleView();
-    window.addEventListener("resize", this.handleView);
-  },
 };
 </script>
 
 <style scoped>
 .banner {
   max-width: 100%;
-  height: 5rem;
 }
 .card {
   background-color: rgba(100, 62, 139, 0.7);
@@ -61,12 +50,6 @@ export default {
   display: flex;
   margin: 3rem 0rem 2rem 0rem;
   max-height: 10%;
-}
-
-.card-img {
-  float: left;
-  height: 300px;
-  width: 300px;
 }
 
 .card-title {

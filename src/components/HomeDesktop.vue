@@ -1,23 +1,55 @@
 <template>
   <div class="container">
-    <HomeMobile v-if="mobileView" />
-    <HomeDesktop v-if="!mobileView" />
+    <img class="banner" src="../assets/fakebanner.png" />
+    <div class="card">
+      <img class="card-img" src="../assets/fakeimg.png" />
+      <div class="content-cotainer">
+        <h1 class="card-title">Ma présentation</h1>
+        <div class="card-content">
+          Bonjour,<br />
+          Je m'appelle Fabienne et je suis heureuse que vous ayez été guidé
+          jusqu'à moi, car oui le hasard n'existe pas, tout est synchronicité,
+          tout à sa raison d'être.<br />
+          Je vais maintenant vous parler un peu de moi.<br />
+          Je me suis toujours senti 'différente' vivant sur cette planète mais
+          n'étant pas de cette planète. Toujours la tête dans les étoiles à
+          regarder le ciel, les nuages, et en y voyant des choses que d'autres
+          ne perçoivent pas.<br />
+          Quelque peu rebelle, allant toujours à contre courant, et ne pouvant
+          rentrer dans aucun des moules que l'on me proposait, j'ai passé une
+          grande partie de ma vie à chercher ce que j'étais et qui j'étais.
+          <br />J'ai toujours posé les mains sur les parties douloureuses de
+          façon inné, je sais quoi faire, j'ai ce savoir au fond de moi, je ne
+          sais pas d'où il vient mais il est là, il est dans mon essence. Il y a
+          des situations dans la vie qui transforment profondément qui tu es, et
+          il aura fallu que je passe par l'expérience la plus difficile et la
+          plus douloureuse de ma vie, l'accompagnement en fin de vie et la perte
+          de ma mère, pour arriver enfin à comprendre et à être. Je suis
+          descendue au plus bas et j'ai fait l'expérience de la nuit noire de
+          l'âme mais tout cela m'a permis de me réveiller d'un long sommeil.
+          C'est lorsque l'on est au plus bas que l'on peut se diriger vers la
+          lumière... <br />Et je pense profondémment que toutes les expériences
+          que nous vivons sont orchestrées et chaque étape nous mène à la
+          suivante... <br />Dans le même temps j'ai entamé un chemin sur la voie
+          de l'éveil et j'ai eu le bonheur d'avoir sur ma route des personnes
+          pour me guider, m'apprendre et me donner le désir d'aller toujours
+          plus loin. Mes capacités ont émergées et mes ressentis et perceptions
+          n'ont fait qu'augmenter.
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HomeMobile from "@/components/HomeMobile.vue";
-import HomeDesktop from "@/components/HomeDesktop.vue";
 export default {
   name: "Home",
-  components: {
-    HomeDesktop,
-    HomeMobile,
-  },
+  components: {},
 
   data() {
     return {
       mobileView: true,
+      showNav: false,
       homeText: [
         {
           id: 1,
@@ -36,15 +68,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    handleView() {
-      this.mobileView = window.innerWidth <= 990;
-    },
-  },
-  created() {
-    this.handleView();
-    window.addEventListener("resize", this.handleView);
   },
 };
 </script>

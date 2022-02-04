@@ -1,17 +1,32 @@
 <template>
   <div id="nav">
-    <NavBar />
-    <!--     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> -->
+    <NavBar v-if="!mobileView" />
+    <NavBarMobile v-if="mobileView" />
   </div>
   <router-view />
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";
+import NavBarMobile from "@/components/NavBarMobile.vue";
 
 export default {
   components: {
     NavBar,
+    NavBarMobile,
+  },
+  data() {
+    return {
+      mobileView: true,
+    };
+  },
+  methods: {
+    handleView() {
+      this.mobileView = window.innerWidth <= 990;
+    },
+  },
+  created() {
+    this.handleView();
+    window.addEventListener("resize", this.handleView);
   },
 };
 </script>
@@ -50,5 +65,15 @@ a {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.burger {
+  width: 50px;
+  height: 50px;
+}
+.nav-icon {
+  display: flex;
+  justify-content: end;
+  margin: 1rem;
 }
 </style>
