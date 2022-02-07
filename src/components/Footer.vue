@@ -23,6 +23,9 @@ export default {
 <style scoped>
 .footer-container {
   display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
   background: rgb(44, 21, 76);
   background: linear-gradient(
     90deg,
@@ -46,10 +49,8 @@ i:hover {
 }
 
 .img-container {
-  margin-bottom: auto;
-  margin-top: auto;
+  position: absolute;
   margin-left: 1rem;
-  flex-direction: row;
   display: flex;
   align-items: flex-end;
 }

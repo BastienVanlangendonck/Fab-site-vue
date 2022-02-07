@@ -6,7 +6,7 @@
     </div>
     <div class="card">
       <div class="content-cotainer">
-        <h1 class="card-title">Ma présentation</h1>
+        <!-- <h1 class="card-title">Ma présentation</h1> -->
         <div class="card-content">
           <img class="card-img" src="../assets/fakeimg.png" />
           Bonjour,<br /><br />

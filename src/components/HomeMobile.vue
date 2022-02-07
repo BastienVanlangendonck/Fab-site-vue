@@ -7,7 +7,7 @@
     <img class="banner" src="../assets/fakebanner.png" />
     <div class="card">
       <div class="content-cotainer">
-        <h1 class="card-title">Ma présentation</h1>
+        <!-- <h1 class="card-title">Ma présentation</h1> -->
         <div class="card-content">
           Bonjour,<br />
           Je m'appelle Fabienne et je suis heureuse que vous ayez été guidé
